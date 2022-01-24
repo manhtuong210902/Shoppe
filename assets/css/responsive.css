@@ -1,0 +1,126 @@
+/* table && mobile */
+@media screen and (max-width: 1023px) {
+    .hide-on-moblie-table{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .container {
+        margin-top: calc(var(--header-height) + 46px);
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .mobile-category{
+        display: block;
+    }
+    .container__content{
+        padding: 0;
+    }
+    .header__mobile-info{
+        display: block;
+    }
+}
+
+/* table */
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+    :root{
+        --navbar-height:0px;
+        --header-height:70px;
+    }
+    .hide-on-table{
+        display: none;
+    }
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+    .header__mobile-info-icon{
+        font-size: 2.4rem;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 739px) {
+    :root{
+        --navbar-height:0px;
+        --header-height:60px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+    .header__with-search{
+        justify-content: space-between;
+    }
+    .header__cart,
+    .header__logo{
+        width: unset;
+    }
+    .header__cart-icon{
+        font-size: 1.8rem;
+    }
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        z-index: 11;
+        height: 44px;
+        padding: 0 4px;
+        animation: mobileSearchSideIn linear 0.2s;
+        display: none;
+    }
+    .header__mobile-search{
+        display: block;
+        cursor: pointer;
+    }
+    .header__search-option{
+        top:39%;
+        left:0;
+    }
+    .header__search-history{
+        position: fixed;
+        top:calc(var(--header-height) + var(--header-sort-bar-height) + 1px);
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    .pagination-item{
+        margin: 8px;
+    }
+    .pagination-item__link{
+        min-width: 22px;
+        height: 25px;
+        line-height: 25px;
+    }
+    .row{
+        margin: 0;
+    }
+    .header__logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .header__logo-img{
+        width: 120px;
+    }
+    .footer{
+        padding: 10px 20px 12px;
+    }
+    @keyframes mobileSearchSideIn {
+        from{
+            opacity: 0;
+            top: calc(var(--header-height)/2);
+        }
+        to{
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+}
